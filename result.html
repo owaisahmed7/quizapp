@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+    <div class="card text-center">
+        <div class="card-header">
+          Result
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Total Marks: 20</h5>
+          <h5 class="card-title">Obtain Marks: </h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="form.html" type="btn-primary" class="button">Show Result</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+          2 days ago
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        
+        const answers = {
+            q1: form.q1.value,
+            q2: form.q2.value,
+            q3: form.q3.value,
+            q4: form.q4.value,
+            q5: form.q5.value,
+            q6: form.q6.value,
+            q7: form.q7.value,
+            q8: form.q8.value,
+            q9: form.q9.value,
+            q10: form.q10.value
+        };
+        
+        // Calculate the score
+        let score = 0;
+        for (let question in answers) {
+            if (answers[question] === "correct") {
+                score++;
+            }
+        }
+        
+        // Display the score
+        alert("Your score is: " + score);
+        
+        // Optionally, you can redirect the user to the result page
+        window.location.href = "result.html";
+    });
+});
+
+      </script>
+</body>
+</html>
